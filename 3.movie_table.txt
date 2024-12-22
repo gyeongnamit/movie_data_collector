@@ -1,0 +1,23 @@
+drop database if exists movie_db;
+-- 영화정보 저장 데이터베이스 생성
+create database movie_db;
+
+-- 데이터베이스 연결
+use movie_db;
+
+-- 영화정보 저장 테이블 생성
+create table movie_tbl(
+    num int primary key auto_increment, -- 영화정보 번호
+    title varchar(100),                 -- 제목
+    director varchar(100),              -- 감독
+    actor varchar(100),                 -- 배우
+    synopsis varchar(1000),             -- 줄거리
+    poster varchar(1000),               -- 포스터 URL
+    open_date date,                     -- 개봉일
+    degree varchar(100),                -- 등급
+    genre varchar(100),                  -- 장르
+    country varchar(30),                -- 제작 국가
+    movie_time varchar(30),             -- 상영시간
+    box_office int ,                    -- 관람객수
+    synopsis_vector varbinary(500)      -- 줄거리 벡터
+);
